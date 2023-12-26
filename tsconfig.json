@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+
+"moduleResolution": "node",
+    "target": "ESNext",
+    "rootDir": "./src",
+    "outDir": "./build"                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+  },
+  "include": [
+    "src/**/*.ts",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
