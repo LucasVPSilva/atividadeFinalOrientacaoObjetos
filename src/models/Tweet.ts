@@ -1,15 +1,18 @@
+import {randomUUID} from "crypto";
+
 export class Tweet {
-  constructor(
-    private id: string,
-    public content: string,
-    public type: string
-  ) {}
+  private _id: string;
+  constructor(public content: string, public type: string) {
+    this._id = randomUUID();
+  }
 
   reply(content: string): void {
     // const addReply = new content
   }
 
-  like(): void {}
+  like(): void {
+    console.log(`Tweet: ${this.content}`);
+  }
 
   show(): void {}
 

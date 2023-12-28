@@ -1,17 +1,27 @@
+import {randomUUID} from "crypto";
+import {users} from "../database/users";
+import {Tweet} from "./Tweet";
+
 export class User {
+  private id: string;
+  private message: Tweet[];
   constructor(
-    private id: string,
     public name: string,
     public username: string,
     public email: string,
     private password: string
-  ) {}
+  ) {
+    this.id = randomUUID();
+    this.message = [];
+    users.push(this);
+  }
 
-  sendTweet() {
+  sendTweet(tweet: Tweet) {
+    this.message.push(tweet);
     console.log("Tweet enviado!");
   }
 
-  follow() {
+  follow(user: User) {
     console.log("Seguindo!");
   }
 
